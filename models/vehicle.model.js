@@ -6,7 +6,7 @@ const vehicleSchema = new mongoose.Schema({
         required: [ true, "Licence plate is required" ],
         unique: true,
     },
-    type: {
+    vehicleType: {
         type: String,
         required: [ true, "Type is required" ],
         enum: [ "car", "motorcycle", "auto" ],
