@@ -105,3 +105,39 @@ Authenticates a user by accepting their email and password and returns the user 
 	•	200 OK: User authenticated successfully.
 	•	400 Bad Request: Missing or invalid fields in the request body.
 	•	401 Unauthorized: Invalid email or password.
+
+## User Profile
+
+### Endpoint
+`GET /users/profile`
+
+### Description
+Fetches the profile of the authenticated user.
+
+### Headers
+- `Authorization`: Bearer token for user authentication.
+
+### Response
+```json
+{
+    "user": {
+        "fullname": {
+            "firstname": "String",
+            "lastname": "String"
+        },
+        "email": "String",
+        "_id": "String",
+        "__v": "String"
+    }
+}
+```
+
+	•	user: Object containing authenticated user’s details.
+	•	id: Unique identifier for the user.
+	•	fullname: Object containing user’s first and last names.
+	•	email: User’s email address.
+
+### Status Codes
+
+	•	200 OK: User profile fetched successfully.
+	•	401 Unauthorized: Invalid or missing authentication token.
