@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require("mongoose");
 
 const vehicleSchema = new mongoose.Schema({
     licencePlate: {
@@ -19,6 +19,10 @@ const vehicleSchema = new mongoose.Schema({
         type: Number,
         required: [ true, "Capacity is required" ],
     },
+    location: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "location",
+    },
 })
 
 
@@ -26,4 +30,4 @@ const vehicleSchema = new mongoose.Schema({
 const Vehicle = mongoose.model("vehicle", vehicleSchema);
 
 
-export default Vehicle;
+module.exports = Vehicle;

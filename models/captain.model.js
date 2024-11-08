@@ -1,4 +1,5 @@
-import mongoose, { mongo } from "mongoose";
+const mongoose = require('mongoose');
+
 
 const captainSchema = new mongoose.Schema({
     email: {
@@ -43,6 +44,10 @@ const captainSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    location: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "location",
+    },
 })
 
 
@@ -63,4 +68,4 @@ captainSchema.methods.generateToken = function () {
 
 const Captain = mongoose.model("captain", captainSchema);
 
-export default Captain;
+module.exports = Captain;
