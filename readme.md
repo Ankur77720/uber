@@ -158,15 +158,28 @@ Registers a new captain by accepting their details and returns the captain objec
         "lastname": "String"
     },
     "email": "String",
-    "password": "String"
+    "password": "String",
+    "license": "String",
+    "vehicle": {
+        "licencePlate": "String",
+        "vehicleType": "String",
+        "color": "String",
+        "capacity":"Number"
+    }
 }
 ```
 
-	•	fullname: Object containing captain’s first and last names.
-	•	firstname: Captain’s first name.
-	•	lastname: Captain’s last name.
-	•	email: Captain’s email address.
-	•	password: Captain’s password.
+    - fullname: Object containing captain’s first and last names.
+        - firstname: Captain’s first name.
+        - lastname: Captain’s last name.
+    - email: Captain’s email address.
+    - password: Captain’s password.
+    - license: Captain’s driving license number.
+    - vehicle: Object containing captain’s vehicle details.
+        - licencePlate: Vehicle's license plate number.
+        - vehicleType: Type of the vehicle.
+        - color: Color of the vehicle.
+        - capacity: Capacity of the vehicle.
 
 ### Response
 ```json
@@ -178,6 +191,13 @@ Registers a new captain by accepting their details and returns the captain objec
         },
         "email": "String",
         "password": "String",
+        "license": "String",
+        "vehicle": {
+                "licencePlate": "String",
+                "vehicleType": "String",
+                "color": "String",
+                "capacity": "Number"
+        },
         "_id": "String",
         "__v": "String"
     },
@@ -189,6 +209,8 @@ Registers a new captain by accepting their details and returns the captain objec
 	•	id: Unique identifier for the captain.
 	•	fullname: Object containing captain’s first and last names.
 	•	email: Captain’s email address.
+	•	license: Captain’s driving license number.
+	•	vehicle: Object containing captain’s vehicle details.
 	•	token: Authentication token for the captain.
 
 ### Status Codes
